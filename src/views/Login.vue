@@ -1,11 +1,16 @@
 <template>
-  <div>
+  <div class="login">
     <h1>This is the login page</h1>
   </div>
 </template>
 
 <script>
+  import store from '../store';
+
   export default {
-    name: 'Login'
+    name: 'Login',
+    mounted() {
+      // store.state.loggedIn = true
+    }
   }
 </script>

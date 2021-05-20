@@ -7,8 +7,5 @@
 <script>
   export default {
     name: 'Main',
-    mounted() {
-      this.$router.push('Login');
-    }
   }
 </script>
