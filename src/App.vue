@@ -11,7 +11,7 @@
     name: 'App',
     mounted() {
       if(store.state.loggedIn !== true) {
-        this.$router.push('Login')
+        this.$router.push('/login')
       }
     }
   }
