@@ -1,7 +1,8 @@
 <template>
   <div class="login" @click="onClick">
     <h1>This is the login page</h1>
-    <FormInput></FormInput>
+    <FormInput :title="'Namn'"></FormInput>
+    <FormInput :title="'Lösenord'"></FormInput>
   </div>
 </template>
 
@@ -18,8 +19,8 @@
     },
     methods: {
       onClick() {
-        this.$store.commit('setLoggedIn')
-        this.$router.push('/')
+        // this.$store.commit('setLoggedIn')
+        // this.$router.push('/')
       }
     }
   }
