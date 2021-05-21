@@ -20,12 +20,13 @@
 
 <style lang="scss">
   .form-input {
-    width: 300px;
-    height: 60px;
+    width: 100%;
+    height: 4rem;
     display: flex;
     flex-direction: column;
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 5px;
   }
 
   input {
