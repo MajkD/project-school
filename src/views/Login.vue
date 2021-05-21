@@ -1,12 +1,18 @@
 <template>
   <div class="login" @click="onClick">
     <h1>This is the login page</h1>
+    <FormInput></FormInput>
   </div>
 </template>
 
 <script>
+  import FormInput from '../components/FormInput.vue'
+
   export default {
     name: 'Login',
+    components: {
+      FormInput,
+    },
     mounted() {
       this.$store.commit('setLoggedIn')
     },
