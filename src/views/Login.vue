@@ -1,9 +1,9 @@
 <template>
   <div class="login">
-    <h1>This is the login page</h1>
-    <FormInput :title="'Namn'"></FormInput>
+    <h1>Inloggning</h1>
+    <FormInput :title="'Användarnamn'"></FormInput>
     <FormInput :title="'Lösenord'"></FormInput>
-    <Button :text="'Logga In'" @clicked="onClick"></Button>
+    <Button :text="'Logga In'" :small=true @clicked="onClick"></Button>
   </div>
 </template>
 
@@ -33,5 +33,7 @@
   .login {
     max-width: 20rem;
     margin: auto;
+    text-align: center;
+    margin-top:  10rem;
   }
 </style>
