@@ -1,8 +1,8 @@
 <template>
   <div class="login">
     <h1>Inloggning</h1>
-    <FormInput :title="'Användarnamn'"></FormInput>
-    <FormInput :title="'Lösenord'"></FormInput>
+    <FormInput :title="'Användarnamn'" :input-type="'input'"></FormInput>
+    <FormInput :title="'Lösenord'" :input-type="'input'"></FormInput>
     <Button :text="'Logga In'" :small=true @clicked="onClick"></Button>
   </div>
 </template>
