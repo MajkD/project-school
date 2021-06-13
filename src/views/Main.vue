@@ -13,17 +13,47 @@
         ]"
       >
       </FormInput>
+      <SelectionList
+        :title="'Elev'"
+        :size="12"
+        :options="[
+          { text: 'Mikael Danielsson'},
+          { text: 'Johanna Wadenius'},
+          { text: 'Bobo Wadenius'},
+          { text: 'Jens Wadenius'},
+          { text: 'Lisa Danielsson'},
+          { text: 'Ole Danielsson'},
+          { text: 'Miro Danielsson'},
+          { text: 'Mikael Danielsson'},
+          { text: 'Johanna Wadenius'},
+          { text: 'Bobo Wadenius'},
+          { text: 'Jens Wadenius'},
+          { text: 'Lisa Danielsson'},
+          { text: 'Ole Danielsson'},
+          { text: 'Miro Danielsson'},
+          { text: 'Mikael Danielsson'},
+          { text: 'Johanna Wadenius'},
+          { text: 'Bobo Wadenius'},
+          { text: 'Jens Wadenius'},
+          { text: 'Lisa Danielsson'},
+          { text: 'Ole Danielsson'},
+          { text: 'Miro Danielsson'},
+        ]"
+      >
+      </SelectionList>
     </div>
   </div>
 </template>
 
 <script>
   import FormInput from '../components/FormInput.vue'
+  import SelectionList from '../components/SelectionList.vue'
 
   export default {
     name: 'Main',
     components: {
       FormInput,
+      SelectionList,
     }
   }
 </script>
