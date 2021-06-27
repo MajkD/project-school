@@ -37,7 +37,7 @@
   }
 
   button {
-    width: 100%;
+    width: 12rem;
     height: 100%;
     font-size: 20px;
     background: $button-color;

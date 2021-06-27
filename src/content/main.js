@@ -1,5 +1,6 @@
 module.exports = {
   teacher: 'Lärare',
+  exampleTeacher: 'Jens Wadenius',
   group: 'Grupp',
   groupData: [
     { text: 'Åk 1', value: 1},
@@ -37,6 +38,14 @@ module.exports = {
     { text: 'Skrivning', value: 2},
     { text: 'Matte', value: 3},
   ],
-  newGroupButton: 'Lägg till ny grupp',
-  newStudentButton: 'Lägg till ny elev'
+  buttons: {
+    newGroup: 'Lägg till ny grupp',
+    newStudent: 'Lägg till ny elev',
+    newMaterial: 'Lägg till nytt material',
+    viewStudent: 'Elevvy',
+    viewStudentMatrixes: 'Elevmatriser',
+    viewGroupMatrixes: 'Gruppmatriser',
+    printMaterial: 'Material for utskrift',
+    logout: 'Logga ut'
+  }
 }

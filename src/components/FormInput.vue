@@ -1,7 +1,12 @@
 <template>
   <div class="form-input">
     <div class="title"> {{ title }}</div>
-    <input v-if="inputType === 'input'"></input>
+    <input
+      v-if="inputType === 'input'"
+      :placeholder="placeholder"
+      :disabled="disabled == true"
+    >
+    </input>
     <select v-if="inputType === 'select'">
       <option v-for="option in options"
         value="option.value"
@@ -24,6 +29,16 @@
       inputType: {
         type: String,
         required: true,
+      },
+      placeholder: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      disabled: {
+        type: Boolean,
+        required: false,
+        default: false
       },
       options: {
         type: Array,
@@ -58,6 +73,10 @@
     border-radius: $border-radius;
     font-size: 20px;
     padding: 0 0 0 1rem;
+  }
+
+  input:disabled {
+    background: white;
   }
 
   select {
