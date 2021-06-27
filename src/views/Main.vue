@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="selections-panel">
-      <div class=selections-column>
+      <div class="selections-column">
         <FormInput :title="content.teacher" :input-type="'input'"></FormInput>
         <FormInput
           :title="content.group"
@@ -11,12 +11,26 @@
         </FormInput>
         <SelectionList
           :title="content.student"
-          :size="12"
+          :size="'18'"
           :options="content.studentData"
         >
         </SelectionList>
       </div>
-      <div class=selections-column>
+      <div class="selections-column">
+        <FormInput
+          :title="content.material"
+          :input-type="'select'"
+          :options="content.materialData"
+        >
+        </FormInput>
+        <div class="button-offset button-offset--group">
+          <Button :text="content.newGroupButton"></Button>
+        </div>
+        <div class="button-offset button-offset--student">
+          <Button :text="content.newStudentButton"></Button>
+        </div>
+      </div>
+      <div class="selections-column">
         <FormInput
           :title="content.material"
           :input-type="'select'"
@@ -31,6 +45,7 @@
 <script>
   import FormInput from '../components/FormInput.vue'
   import SelectionList from '../components/SelectionList.vue'
+  import Button from '../components/Button.vue'
   import content from '../content'
 
   export default {
@@ -38,6 +53,7 @@
     components: {
       FormInput,
       SelectionList,
+      Button,
     },
     computed: {
       content() {
@@ -59,5 +75,15 @@
   
   .selections-panel {
     display: flex;
+  }
+
+  .button-offset {
+    width:  12rem;
+    &--group {
+      margin-top:  2.4rem;
+    }
+    &--student {
+      margin-top:  2rem;
+    }
   }
 </style>

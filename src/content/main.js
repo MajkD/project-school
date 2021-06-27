@@ -36,5 +36,7 @@ module.exports = {
     { text: 'Läsning', value: 1},
     { text: 'Skrivning', value: 2},
     { text: 'Matte', value: 3},
-  ]
+  ],
+  newGroupButton: 'Lägg till ny grupp',
+  newStudentButton: 'Lägg till ny elev'
 }

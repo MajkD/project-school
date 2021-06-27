@@ -50,7 +50,7 @@
     }
 
     &.small {
-      width:  10rem;
+      width:  12rem;
     }
   }
 </style>

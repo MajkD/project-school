@@ -34,7 +34,7 @@
       }
     },
     mounted() {
-      console.log(this.$refs.list.setAttribute("size", this.size))
+      this.$refs.list.setAttribute("size", this.size)
     }
   }
 </script>
