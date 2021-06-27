@@ -1,15 +1,16 @@
 <template>
   <div class="login">
-    <h1>Inloggning</h1>
-    <FormInput :title="'Användarnamn'" :input-type="'input'"></FormInput>
-    <FormInput :title="'Lösenord'" :input-type="'input'"></FormInput>
-    <Button :text="'Logga In'" :small=true @clicked="onClick"></Button>
+    <h1> {{ content.title }}</h1>
+    <FormInput :title="content.username" :input-type="'input'"></FormInput>
+    <FormInput :title="content.password" :input-type="'input'"></FormInput>
+    <Button :text="content.login" :small=true @clicked="onClick"></Button>
   </div>
 </template>
 
 <script>
   import FormInput from '../components/FormInput.vue'
   import Button from '../components/Button.vue'
+  import content from '../content'
 
   export default {
     name: 'Login',
@@ -19,6 +20,11 @@
     },
     mounted() {
       this.$store.commit('setLoggedIn')
+    },
+    computed: {
+      content() {
+        return content.login
+      }
     },
     methods: {
       onClick() {
