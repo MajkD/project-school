@@ -30,7 +30,7 @@
         >
         </FormInput>
         <div class="button-group">
-          <Button :text="content.buttons.newGroup"></Button>
+          <Button :text="content.buttons.newGroup" @clicked="newGroupClicked"></Button>
         </div>
         <div class="button-student">
           <Button :text="content.buttons.newStudent"></Button>
@@ -67,6 +67,11 @@
     computed: {
       content() {
         return content.main
+      }
+    },
+    methods: {
+      newGroupClicked() {
+        this.$store.commit('showModal', { modalType: 'addNewGroup' })
       }
     }
   }

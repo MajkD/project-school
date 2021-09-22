@@ -1,6 +1,17 @@
-- Look at mobile view
-- Buttons and panels must be same size
 - Move common css value sinto common file
+- Look at mobile view
+
+- Add modal
+- Add new material
+- Add new group
+- Add new Student
+- connect with store...
+
+- Ta bort saker??
+--------
+- Split up student view / teacher view
+
+
 - Customize drop down arrow 
 - Customize scrollbar
 - Add Linter

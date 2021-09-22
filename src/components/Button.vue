@@ -33,13 +33,13 @@
   @import '../common.scss';
 
   .button {
-    height: 3rem;
+    height: 2.6rem;
   }
 
   button {
     width: 12rem;
     height: 100%;
-    font-size: 20px;
+    font-size: 18px;
     background: $button-color;
     border: 1px solid grey;
     border-radius: 7px;
