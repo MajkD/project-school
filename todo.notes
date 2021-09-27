@@ -1,4 +1,3 @@
-- Move common css value sinto common file
 - Look at mobile view
 
 - Add modal
@@ -15,3 +14,10 @@
 - Customize drop down arrow 
 - Customize scrollbar
 - Add Linter
+
+
+
+----------- FRÅGOR ----------
+
+- Hur gör vi med mobile view? Ska det vara desktop only?
+

@@ -57,7 +57,7 @@
     height: 4rem;
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: $font-size;
     margin-bottom: 1rem;
     text-align: left;
   }
@@ -71,7 +71,7 @@
     height: 100%;
     border: 1px solid grey;
     border-radius: $border-radius;
-    font-size: 20px;
+    font-size: $font-size;
     padding: 0 0 0 1rem;
   }
 
@@ -84,7 +84,7 @@
     height: 100%;
     border: 1px solid grey;
     border-radius: $border-radius;
-    font-size: 20px;
+    font-size: $font-size;
     padding: 0 0 0 1rem;
   }
 </style>

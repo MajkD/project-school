@@ -58,15 +58,16 @@
   }
 
   &__content {
+    font-size: $font-size;
     position: relative;
     display: flex;
     flex-direction: column;
     border-radius: $border-radius;
     background-color: $background-color;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px;
-    padding:  32px;
+    padding: 32px;
     margin: 0;
-    z-index:  1;
+    z-index: 1;
     overflow-y: auto;
     overscroll-behavior-y: contain;
   }

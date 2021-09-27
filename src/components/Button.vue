@@ -39,7 +39,7 @@
   button {
     width: 12rem;
     height: 100%;
-    font-size: 18px;
+    font-size: $font-size;
     background: $button-color;
     border: 1px solid grey;
     border-radius: 7px;
