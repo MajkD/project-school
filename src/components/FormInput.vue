@@ -1,6 +1,6 @@
 <template>
   <div class="form-input">
-    <div class="title"> {{ title }}</div>
+    <div class="form-input__title"> {{ title }}</div>
     <input
       v-if="inputType === 'input'"
       :placeholder="placeholder"
@@ -60,10 +60,10 @@
     font-size: $font-size;
     margin-bottom: 1rem;
     text-align: left;
-  }
 
-  .title {
-    padding-left: 1rem;
+    &__title {
+      padding-left: 1rem;  
+    }
   }
 
   input {

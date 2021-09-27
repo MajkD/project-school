@@ -1,6 +1,6 @@
 <template>
   <div class="selection-list">
-    <div class="title"> {{ title }}</div>
+    <div class="selection-list__title"> {{ title }}</div>
     <div>
       <select ref="list">
         <option v-for="option in options"
@@ -45,10 +45,10 @@
   .selection-list {
     font-size: $font-size;
     margin-bottom: 1rem;
-  }
 
-  .title {
-    padding-left: 1rem;
+    &__title {
+      padding-left: 1rem;  
+    }
   }
 
   select {

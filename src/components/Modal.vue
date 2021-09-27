@@ -5,8 +5,9 @@
   >
     <div class="modal__overlay" @click="close"></div>
     <div class=modal__content>
-      <div class="title"> {{ content.title }} </div>
+      <h3> {{ content.title }} </h3>
       <div class="text"> {{ content.text }} </div>
+      <form-input></form-input>
     </div>
   </div>
 </template>
@@ -14,9 +15,13 @@
 <script>
   import store from '../store'
   import content from '../content'
+  import FormInput from '../components/FormInput.vue'
 
   export default {
     name: 'Modal',
+    components: {
+      FormInput
+    },
     computed: {
       show() {
         return store.state.modal.show

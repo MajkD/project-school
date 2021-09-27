@@ -78,6 +78,10 @@
 </script>
 
 <style lang="scss">
+  html {
+    font-family: arial;
+  }
+
   .main {
     padding: 1rem;
   }
