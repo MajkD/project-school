@@ -1,6 +1,10 @@
 <template>
   <div class="button">
-    <button @click="onClick" v-bind:class="{ 'small': small }">
+    <button
+      @click="onClick"
+      v-bind:class="{ 'small': small }"
+      :class="type === 'primary' ? 'primary' : 'secondary'"
+    >
       {{ text }}
     </button>
   </div>
@@ -19,6 +23,11 @@
         type: Boolean,
         required: false,
         default: false
+      },
+      type: {
+        type: String,
+        required: false,
+        default: 'primary'
       }
     },
     methods: {
@@ -51,6 +60,14 @@
 
     &.small {
       width:  12rem;
+    }
+
+    &.secondary {
+      background: $button-color-secondary;
+
+      &:hover {
+        background: $button-color-secondary-hover;
+      }
     }
   }
 </style>

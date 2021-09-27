@@ -6,8 +6,14 @@
     <div class="modal__overlay" @click="close"></div>
     <div class=modal__content>
       <h3> {{ content.title }} </h3>
-      <div class="text"> {{ content.text }} </div>
-      <form-input></form-input>
+      <FormInput
+        :title="content.text"
+        :input-type="'input'"
+      />
+      <div class="actions">
+        <Button :text="'AVBRYT'" :type="'secondary'"></Button>
+        <Button :text="'OK'"></Button>
+      </div>
     </div>
   </div>
 </template>
@@ -16,11 +22,13 @@
   import store from '../store'
   import content from '../content'
   import FormInput from '../components/FormInput.vue'
+  import Button from '../components/Button.vue'
 
   export default {
     name: 'Modal',
     components: {
-      FormInput
+      FormInput,
+      Button
     },
     computed: {
       show() {
@@ -75,6 +83,10 @@
     z-index: 1;
     overflow-y: auto;
     overscroll-behavior-y: contain;
+  }
+
+  .actions {
+    display: flex
   }
 }
 

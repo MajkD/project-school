@@ -1,12 +1,16 @@
-- Look at mobile view
+- MODAL
+  - Button actions, submit / cancel
+  - Capture enter - submit (button panel??)
+  - Add new material
+  - Add new group
+  - Add new Student
+  - connect with store...
+  - Make modal with slots instead
 
-- Add modal
-- Add new material
-- Add new group
-- Add new Student
-- connect with store...
+  - Upon submit, do stuff with new value
 
-- Ta bort saker??
+
+- Remove sstuff??
 --------
 - Split up student view / teacher view
 
