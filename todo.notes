@@ -1,11 +1,12 @@
 - MODAL
-  - Button actions, submit / cancel
   - Capture enter - submit (button panel??)
   - Add new material
   - Add new group
   - Add new Student
   - connect with store...
-  - Make modal with slots instead
+
+  - Make modal types controlled by configs with slots instead
+    - Modal with sub-modal for example?
 
   - Upon submit, do stuff with new value
 

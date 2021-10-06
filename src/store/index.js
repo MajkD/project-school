@@ -16,6 +16,9 @@ module.exports = {
     },
     hideMdal(state) {
       state.modal.show = false
+    },
+    addNewGroup (context, payLoad) {
+      console.log('actions - addNewGroup', payLoad)
     }
   }
 }

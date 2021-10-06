@@ -9,10 +9,21 @@
       <FormInput
         :title="content.text"
         :input-type="'input'"
+        @onInput="onInput"
       />
       <div class="actions">
-        <Button :text="'AVBRYT'" :type="'secondary'"></Button>
-        <Button :text="'OK'"></Button>
+        <Button
+          :text="'AVBRYT'"
+          :type="'secondary'"
+          @clicked="close"
+        >
+        </Button>
+        <Button
+          :text="'OK'"
+          :disabled="!inputModalValue"
+          @clicked="okClicked"
+        >
+        </Button>
       </div>
     </div>
   </div>
@@ -30,6 +41,11 @@
       FormInput,
       Button
     },
+    data() {
+      return {
+        inputModalValue: null
+      }
+    },
     computed: {
       show() {
         return store.state.modal.show
@@ -41,6 +57,12 @@
     methods: {
       close() {
         this.$store.commit('hideMdal')
+      },
+      okClicked() {
+        this.$store.commit(this.content.action, { value: this.inputModalValue })
+      },
+      onInput(value) {
+        this.inputModalValue = value
       }
     }
   }

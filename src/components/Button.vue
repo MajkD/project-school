@@ -4,6 +4,7 @@
       @click="onClick"
       v-bind:class="{ 'small': small }"
       :class="type === 'primary' ? 'primary' : 'secondary'"
+      :disabled="disabled"
     >
       {{ text }}
     </button>
@@ -28,6 +29,11 @@
         type: String,
         required: false,
         default: 'primary'
+      },
+      disabled: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     methods: {

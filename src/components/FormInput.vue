@@ -5,6 +5,8 @@
       v-if="inputType === 'input'"
       :placeholder="placeholder"
       :disabled="disabled == true"
+      v-model="value"
+      @input="onInput"
     >
     </input>
     <select v-if="inputType === 'select'">
@@ -44,6 +46,16 @@
         type: Array,
         required: false,
         defualt: () => []
+      }
+    },
+    data() {
+      return {
+        value: null
+      }
+    },
+    methods: {
+      onInput(event) {
+        this.$emit('onInput', event.target.value)
       }
     }
   }
