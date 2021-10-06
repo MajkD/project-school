@@ -12,7 +12,7 @@
         <FormInput
           :title="content.group"
           :input-type="'select'"
-          :options="content.groupData"
+          :options="groupData"
         >
         </FormInput>
         <SelectionList
@@ -67,6 +67,9 @@
     computed: {
       content() {
         return content.main
+      },
+      groupData() {
+        return this.$store.state.groupData
       }
     },
     methods: {

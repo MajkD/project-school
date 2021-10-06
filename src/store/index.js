@@ -1,5 +1,17 @@
+const Vue = require('vue')
+
+function exists(group) {
+  return group.text === payLoad.value
+}
+
 module.exports = {
   state: {
+    groupData: [
+      { text: 'Åk 1'},
+      { text: 'Åk 2'},
+      { text: 'Åk 3'},
+      { text: 'Åk 4'},
+    ],
     loggedIn: false,
     modal: {
       show: false,
@@ -17,8 +29,10 @@ module.exports = {
     hideMdal(state) {
       state.modal.show = false
     },
-    addNewGroup (context, payLoad) {
-      console.log('actions - addNewGroup', payLoad)
+    addNewGroup (state, payLoad) {
+      state.groupData.push({
+        text: payLoad.value
+      })
     }
   }
 }

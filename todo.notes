@@ -1,9 +1,10 @@
 - MODAL
-  - Capture enter - submit (button panel??)
   - Add new material
   - Add new group
   - Add new Student
   - connect with store...
+
+  - Add Some form of general message what action was performed
 
   - Make modal types controlled by configs with slots instead
     - Modal with sub-modal for example?
@@ -11,7 +12,7 @@
   - Upon submit, do stuff with new value
 
 
-- Remove sstuff??
+- Remove stuff??
 --------
 - Split up student view / teacher view
 

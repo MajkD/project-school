@@ -2,6 +2,7 @@
   <div
     v-if="show"
     class="modal"
+    @keyup.enter="submit"
   >
     <div class="modal__overlay" @click="close"></div>
     <div class=modal__content>
@@ -21,7 +22,7 @@
         <Button
           :text="'OK'"
           :disabled="!inputModalValue"
-          @clicked="okClicked"
+          @clicked="submit"
         >
         </Button>
       </div>
@@ -30,7 +31,6 @@
 </template>
 
 <script>
-  import store from '../store'
   import content from '../content'
   import FormInput from '../components/FormInput.vue'
   import Button from '../components/Button.vue'
@@ -48,18 +48,19 @@
     },
     computed: {
       show() {
-        return store.state.modal.show
+        return this.$store.state.modal.show
       },
       content() {
-        return content.modalTypes[store.state.modal.type]
+        return content.modalTypes[this.$store.state.modal.type]
       }
     },
     methods: {
       close() {
         this.$store.commit('hideMdal')
       },
-      okClicked() {
+      submit() {
         this.$store.commit(this.content.action, { value: this.inputModalValue })
+        this.close()
       },
       onInput(value) {
         this.inputModalValue = value

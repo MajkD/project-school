@@ -10,9 +10,7 @@
     >
     </input>
     <select v-if="inputType === 'select'">
-      <option v-for="option in options"
-        value="option.value"
-      >
+      <option v-for="option in options">
         {{ option.text }}
       </option>
     </select>

@@ -2,12 +2,6 @@ module.exports = {
   teacher: 'Lärare',
   exampleTeacher: 'Jens Wadenius',
   group: 'Grupp',
-  groupData: [
-    { text: 'Åk 1', value: 1},
-    { text: 'Åk 2', value: 2},
-    { text: 'Åk 3', value: 3},
-    { text: 'Åk 4', value: 4},
-  ],
   student: 'Elev',
   studentData: [
     { text: 'Mikael Danielsson'},
