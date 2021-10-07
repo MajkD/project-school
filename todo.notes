@@ -1,10 +1,11 @@
+- Add Some form of general message what action was performed
+- Change mutations to actions everywhere
+
 - MODAL
   - Add new material
   - Add new group
   - Add new Student
   - connect with store...
-
-  - Add Some form of general message what action was performed
 
   - Make modal types controlled by configs with slots instead
     - Modal with sub-modal for example?

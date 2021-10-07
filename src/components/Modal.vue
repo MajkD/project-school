@@ -34,6 +34,7 @@
   import content from '../content'
   import FormInput from '../components/FormInput.vue'
   import Button from '../components/Button.vue'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'Modal',
@@ -55,11 +56,17 @@
       }
     },
     methods: {
+      ...mapActions(['add']),
       close() {
         this.$store.commit('hideMdal')
       },
       submit() {
-        this.$store.commit(this.content.action, { value: this.inputModalValue })
+        if (this.content.action.type === 'add') {
+          this.add({
+            entity: this.content.action.entity,
+            value: this.inputModalValue
+          })
+        }
         this.close()
       },
       onInput(value) {

@@ -1,8 +1,4 @@
-const Vue = require('vue')
-
-function exists(group) {
-  return group.text === payLoad.value
-}
+const content = require('../content')
 
 module.exports = {
   state: {
@@ -18,6 +14,14 @@ module.exports = {
       type: ''
     }
   },
+  actions: {
+    add({ state, commit, dispatch, rootGetters }, payLoad) {
+      if (payLoad.entity === 'group') {
+        commit('mutateNewGroup', { value: payLoad.value })
+        commit('message', { value: content.default.messages.newGroupAdded })
+      }
+    }
+  },
   mutations: {
     setLoggedIn(state) {
       state.loggedIn = true
@@ -29,10 +33,13 @@ module.exports = {
     hideMdal(state) {
       state.modal.show = false
     },
-    addNewGroup (state, payLoad) {
+    mutateNewGroup (state, payLoad) {
       state.groupData.push({
         text: payLoad.value
       })
+    },
+    message (state, payLoad) {
+      
     }
   }
 }
