@@ -2,8 +2,9 @@
   <div class="messages">
     <div
       v-if="messages[0]"
+      class="message-container"
     >
-      {{ messages[0] }}
+      <div> {{ messages[0] }} </div>
     </div>
     <div v-for="(message, index) in messages" :key="`message-${index}`">
     </div>
@@ -44,12 +45,30 @@
   @import '../common.scss';
 
   .messages {
-    border: solid 2px black;
     position: absolute;
-    height: 200px;
-    width: 400px;
-    top: calc(100% - 210px);
-    left: calc(100% - 410px);
+    height: 3rem;
+    width: 30rem;
+    top: calc(100% - 4rem);
+    left: calc(100% - 31rem);
+
+    .message-container {
+      font-size: 22px;
+      height: 3rem;
+      background: #3bad12;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1rem;
+      border-radius: 0.5rem;
+
+      -webkit-animation: fadeIn 0.4s;
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
   }
 
 </style>
