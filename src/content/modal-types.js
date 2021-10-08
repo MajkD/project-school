@@ -7,4 +7,12 @@ module.exports = {
       entity: 'group'
     }
   },
+  addNewStudent: {
+    title: 'Lägg till ny elev',
+    text: 'Namn',
+    action: {
+      type: 'add',
+      entity: 'student'
+    }
+  }
 }

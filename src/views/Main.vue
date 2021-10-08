@@ -18,7 +18,7 @@
         <SelectionList
           :title="content.student"
           :size="'18'"
-          :options="content.studentData"
+          :options="studentData"
         >
         </SelectionList>
       </div>
@@ -33,7 +33,7 @@
           <Button :text="content.buttons.newGroup" @clicked="newGroupClicked"></Button>
         </div>
         <div class="button-student">
-          <Button :text="content.buttons.newStudent"></Button>
+          <Button :text="content.buttons.newStudent" @clicked="newStudentClicked"></Button>
         </div>
       </div>
       <div class="selections-column">
@@ -70,11 +70,17 @@
       },
       groupData() {
         return this.$store.state.groupData
+      },
+      studentData() {
+        return this.$store.state.studentData
       }
     },
     methods: {
       newGroupClicked() {
         this.$store.commit('showModal', { modalType: 'addNewGroup' })
+      },
+      newStudentClicked() {
+        this.$store.commit('showModal', { modalType: 'addNewStudent' })
       }
     }
   }
