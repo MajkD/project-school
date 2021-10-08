@@ -11,6 +11,7 @@
   import FormInput from '../components/FormInput.vue'
   import Button from '../components/Button.vue'
   import content from '../content'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'Login',
@@ -19,7 +20,7 @@
       Button,
     },
     mounted() {
-      this.$store.commit('setLoggedIn')
+      this.setLoggedIn( {value: true })
     },
     computed: {
       content() {
@@ -27,8 +28,9 @@
       }
     },
     methods: {
+      ...mapActions(['setLoggedIn']),
       onClick() {
-        this.$store.commit('setLoggedIn')
+        this.setLoggedIn( {value: true })
         this.$router.push('/')
       }
     }

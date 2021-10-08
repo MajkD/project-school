@@ -26,7 +26,7 @@
         <FormInput
           :title="content.material"
           :input-type="'select'"
-          :options="content.materialData"
+          :options="materialData"
         >
         </FormInput>
         <div class="button-group">
@@ -38,7 +38,7 @@
       </div>
       <div class="selections-column">
         <div class="button-material">
-          <Button :text="content.buttons.newMaterial"></Button>
+          <Button :text="content.buttons.newMaterial" @clicked="newMaterialClicked"></Button>
         </div>
         <div class="space"></div>
         <Button :text="content.buttons.viewStudent"></Button>
@@ -56,6 +56,7 @@
   import SelectionList from '../components/SelectionList.vue'
   import Button from '../components/Button.vue'
   import content from '../content'
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'Main',
@@ -73,14 +74,21 @@
       },
       studentData() {
         return this.$store.state.studentData
+      },
+      materialData() {
+        return this.$store.state.materialData
       }
     },
     methods: {
+      ...mapActions(['setModal']),
       newGroupClicked() {
-        this.$store.commit('showModal', { modalType: 'addNewGroup' })
+        this.setModal({ visible: true, modalType: 'addNewGroup' })
       },
       newStudentClicked() {
-        this.$store.commit('showModal', { modalType: 'addNewStudent' })
+        this.setModal({ visible: true, modalType: 'addNewStudent' })
+      },
+      newMaterialClicked() {
+        this.setModal({ visible: true, modalType: 'addNewMaterial' })
       }
     }
   }

@@ -14,5 +14,13 @@ module.exports = {
       type: 'add',
       entity: 'student'
     }
+  },
+  addNewMaterial: {
+    title: 'Lägg till nytt material',
+    text: 'Namn',
+    action: {
+      type: 'add',
+      entity: 'material'
+    }
   }
 }

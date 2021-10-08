@@ -31,9 +31,14 @@ module.exports = {
       { text: 'Ole Danielsson'},
       { text: 'Miro Danielsson'},
     ],
+    materialData: [
+      { text: 'Läsning'},
+      { text: 'Skrivning'},
+      { text: 'Matte'},
+    ],
     loggedIn: false,
     modal: {
-      show: false,
+      visible: false,
       type: ''
     }
   },
@@ -47,18 +52,25 @@ module.exports = {
         commit('mutateNewStudent', { value: payLoad.value })
         commit('message', { value: content.default.messages.newStudentAdded })
       }
+      if (payLoad.entity === 'material') {
+        commit('mutateNewMaterial', { value: payLoad.value })
+        commit('message', { value: content.default.messages.newMaterialAdded })
+      }
+    },
+    setLoggedIn({ state, commit, dispatch, rootGetters }, payLoad) {
+      commit('mutateLoggedIn', payLoad)
+    },
+    setModal({ state, commit, dispatch, rootGetters }, payLoad) {
+      commit('mutateModal', payLoad)
     }
   },
   mutations: {
-    setLoggedIn(state) {
-      state.loggedIn = true
+    mutateLoggedIn(state, payLoad) {
+      state.loggedIn = payLoad.value
     },
-    showModal(state, payLoad) {
-      state.modal.show = true
+    mutateModal(state, payLoad) {
+      state.modal.visible = payLoad.visible
       state.modal.type = payLoad.modalType
-    },
-    hideMdal(state) {
-      state.modal.show = false
     },
     mutateNewGroup (state, payLoad) {
       state.groupData.push({
@@ -67,6 +79,11 @@ module.exports = {
     },
     mutateNewStudent (state, payLoad) {
       state.studentData.push({
+        text: payLoad.value
+      })
+    },
+    mutateNewMaterial (state, payLoad) {
+      state.materialData.push({
         text: payLoad.value
       })
     },

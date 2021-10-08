@@ -49,16 +49,16 @@
     },
     computed: {
       show() {
-        return this.$store.state.modal.show
+        return this.$store.state.modal.visible
       },
       content() {
         return content.modalTypes[this.$store.state.modal.type]
       }
     },
     methods: {
-      ...mapActions(['add']),
+      ...mapActions(['add', 'setModal']),
       close() {
-        this.$store.commit('hideMdal')
+        this.setModal({ visible: false })
       },
       submit() {
         if (this.content.action.type === 'add') {
