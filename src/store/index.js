@@ -44,6 +44,9 @@ module.exports = {
       commit('mutateEntity', payLoad)
       commit('message', { value: content.default.messages[payLoad.entity].newAdded })
     },
+    setSelected({ state, commit, dispatch, rootGetters }, payLoad) {
+      commit('mutateSelected', payLoad)
+    },
     setLoggedIn({ state, commit, dispatch, rootGetters }, payLoad) {
       commit('mutateLoggedIn', payLoad)
     },
@@ -63,6 +66,9 @@ module.exports = {
       state[payLoad.entity].list.push({
         text: payLoad.value
       })
+    },
+    mutateSelected(state, payLoad) {
+      state[payLoad.entity].selected = payLoad.value
     },
     message (state, payLoad) {}
   }

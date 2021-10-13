@@ -9,7 +9,9 @@
       @input="onInput"
     >
     </input>
-    <select v-if="inputType === 'select'">
+    <select v-if="inputType === 'select'"
+      @input="onSelect"
+    >
       <option v-for="option in list"
         :selected="selected === option.text"
       >
@@ -20,6 +22,8 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     name: 'FormInput',
     props: {
@@ -62,8 +66,15 @@
       }
     },
     methods: {
+      ...mapActions(['setSelected']),
       onInput(event) {
         this.$emit('onInput', event.target.value)
+      },
+      onSelect(event) {
+        this.setSelected({
+          entity: this.entity,
+          value: event.target.value
+        })
       }
     }
   }

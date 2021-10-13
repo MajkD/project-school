@@ -2,7 +2,9 @@
   <div class="selection-list">
     <div class="selection-list__title"> {{ title }}</div>
     <div>
-      <select ref="list">
+      <select ref="list"
+        @input="onSelect"
+      >
         <option v-for="option in list"
           :selected="selected === option.text"
         >
@@ -14,6 +16,8 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     name: 'SelectionList',
     props: {
@@ -42,6 +46,15 @@
       },
       selected() {
         return this.$store.state[this.entity].selected
+      }
+    },
+    methods: {
+      ...mapActions(['setSelected']),
+      onSelect(event) {
+        this.setSelected({
+          entity: this.entity,
+          value: event.target.value
+        })
       }
     }
   }
