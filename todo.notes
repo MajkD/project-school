@@ -1,8 +1,5 @@
 
-- Track selected Group, Student, Material etc in state
 - Look at deploy
-
-
 - Make modal types controlled by configs with slots instead
   - Modal with sub-modal for example?
 
