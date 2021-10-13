@@ -3,9 +3,7 @@
     <div class="selection-list__title"> {{ title }}</div>
     <div>
       <select ref="list">
-        <option v-for="option in options"
-          value="option.value"
-        >
+        <option v-for="option in data.list">
           {{ option.text }}
         </option>
       </select>
@@ -27,14 +25,19 @@
         required: false,
         default: "5"
       },
-      options: {
-        type: Array,
+      entity: {
+        type: String,
         required: false,
-        defualt: () => []
+        default: ''
       }
     },
     mounted() {
       this.$refs.list.setAttribute("size", this.size)
+    },
+    computed: {
+      data() {
+        return this.$store.state[this.entity]
+      }
     }
   }
 </script>

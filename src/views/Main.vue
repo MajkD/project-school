@@ -12,13 +12,13 @@
         <FormInput
           :title="content.group"
           :input-type="'select'"
-          :options="groupData"
+          :entity="'group'"
         >
         </FormInput>
         <SelectionList
           :title="content.student"
           :size="'18'"
-          :options="studentData"
+          :entity="'student'"
         >
         </SelectionList>
       </div>
@@ -26,7 +26,7 @@
         <FormInput
           :title="content.material"
           :input-type="'select'"
-          :options="materialData"
+          :entity="'material'"
         >
         </FormInput>
         <div class="button-group">

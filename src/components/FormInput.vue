@@ -10,7 +10,7 @@
     >
     </input>
     <select v-if="inputType === 'select'">
-      <option v-for="option in options">
+      <option v-for="option in data.list">
         {{ option.text }}
       </option>
     </select>
@@ -40,15 +40,20 @@
         required: false,
         default: false
       },
-      options: {
-        type: Array,
+      entity: {
+        type: String,
         required: false,
-        defualt: () => []
+        default: ''
       }
     },
     data() {
       return {
         value: null
+      }
+    },
+    computed: {
+      data() {
+        return this.$store.state[this.entity]
       }
     },
     methods: {

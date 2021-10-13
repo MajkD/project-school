@@ -1,5 +1,11 @@
 module.exports = {
-  newGroupAdded: 'Ny grupp tillagd',
-  newStudentAdded: 'Ny elev tillagd',
-  newMaterialAdded: 'Nytt material tillagt'
+  group: {
+    newAdded: 'Ny grupp tillagd'
+  },
+  student: {
+    newAdded: 'Ny elev tillagd'
+  },
+  material: {
+    newAdded: 'Nytt material tillagt'
+  }
 }
