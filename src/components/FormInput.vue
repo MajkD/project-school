@@ -10,7 +10,9 @@
     >
     </input>
     <select v-if="inputType === 'select'">
-      <option v-for="option in data.list">
+      <option v-for="option in list"
+        :selected="selected === option.text"
+      >
         {{ option.text }}
       </option>
     </select>
@@ -52,8 +54,11 @@
       }
     },
     computed: {
-      data() {
-        return this.$store.state[this.entity]
+      list() {
+        return this.$store.state[this.entity].list
+      },
+      selected() {
+        return this.$store.state[this.entity].selected
       }
     },
     methods: {

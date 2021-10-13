@@ -3,7 +3,7 @@ const content = require('../content')
 module.exports = {
   state: {
     group: {
-      selected: 'Åk 1',
+      selected: 'Åk 3',
       list: [
         { text: 'Åk 1'},
         { text: 'Åk 2'},
@@ -12,7 +12,7 @@ module.exports = {
       ]
     },
     student: {
-      selected: 'Mikael Danielsson',
+      selected: 'Lisa Danielsson',
       list: [
         { text: 'Mikael Danielsson'},
         { text: 'Johanna Wadenius'},
@@ -26,7 +26,7 @@ module.exports = {
       ]
     },
     material: {
-      selected: 'Läsning',
+      selected: 'Skrivning',
       list: [
         { text: 'Läsning'},
         { text: 'Skrivning'},

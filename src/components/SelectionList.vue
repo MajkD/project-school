@@ -3,7 +3,9 @@
     <div class="selection-list__title"> {{ title }}</div>
     <div>
       <select ref="list">
-        <option v-for="option in data.list">
+        <option v-for="option in list"
+          :selected="selected === option.text"
+        >
           {{ option.text }}
         </option>
       </select>
@@ -35,8 +37,11 @@
       this.$refs.list.setAttribute("size", this.size)
     },
     computed: {
-      data() {
-        return this.$store.state[this.entity]
+      list() {
+        return this.$store.state[this.entity].list
+      },
+      selected() {
+        return this.$store.state[this.entity].selected
       }
     }
   }
