@@ -10,8 +10,6 @@ const store = new Vuex.Store({
   modules
 })
 
-console.log(store)
-
 new Vue({
   router,
   store,

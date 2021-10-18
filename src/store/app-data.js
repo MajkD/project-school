@@ -60,6 +60,19 @@ export default {
     },
     mutateSelected(state, payLoad) {
       state[payLoad.entity].selected = payLoad.value
+      for(const key in state) {
+        const item = state[key]
+        if(item.belongsTo === payLoad.entity) {
+          const belongingItems = item.list.filter(listItem => {
+            return listItem[payLoad.entity] === state[payLoad.entity].selected
+          })
+          if(belongingItems.length > 0) {
+            item.selected = belongingItems[0].text
+          } else {
+            item.selected = ''
+          }
+        }
+      }
     }
   }
 }
