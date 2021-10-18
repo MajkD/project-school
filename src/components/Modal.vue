@@ -48,17 +48,20 @@
       }
     },
     computed: {
+      modal() {
+        return this.$store.state.common.modal
+      },
       show() {
-        return this.$store.state.modal.visible
+        return this.modal.visible
       },
       title() {
         return this.content.title.replace(
           '{selectedGroup}',
-          this.$store.state.group.selected
+          this.$store.state.appData.group.selected
         )
       },
       content() {
-        return content.modalTypes[this.$store.state.modal.type]
+        return content.modalTypes[this.modal.type]
       }
     },
     methods: {

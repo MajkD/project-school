@@ -60,18 +60,18 @@
     },
     computed: {
       list() {
-        return this.$store.state[this.entity].list
+        return this.$store.state.appData[this.entity].list
       },
       selected() {
-        return this.$store.state[this.entity].selected
+        return this.$store.state.appData[this.entity].selected
       }
     },
     methods: {
       ...mapActions(['setSelected']),
       shouldShow(option) {
-        const belongs = this.$store.state[this.entity].belongsTo
+        const belongs = this.$store.state.appData[this.entity].belongsTo
         if(belongs) {
-          const selectedBelonging = this.$store.state[belongs].selected
+          const selectedBelonging = this.$store.state.appData[belongs].selected
           if(option[belongs] !== selectedBelonging) {
             return false
           }

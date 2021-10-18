@@ -1,5 +1,7 @@
 
-- Look at deploy
+
+- Alignment of buttons, now a bit off
+
 - Make modal types controlled by configs with slots instead
   - Modal with sub-modal for example?
 - Modals that are used for adding stuff should be the onyl ones replacing {blah} etc..

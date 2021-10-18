@@ -2,11 +2,15 @@ import Vue from "vue"
 import Vuex from 'vuex'
 import App from "./App.vue"
 import router from "./router"
-const basicStore = require('./store')
-
+import modules from './store'
 Vue.use(Vuex)
 
-const store = new Vuex.Store(basicStore)
+const store = new Vuex.Store({
+  strict: true,
+  modules
+})
+
+console.log(store)
 
 new Vue({
   router,

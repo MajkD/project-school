@@ -18,7 +18,7 @@
       Messages,
     },
     mounted() {
-      if(store.state.loggedIn !== true) {
+      if(store.common.loggedIn !== true) {
         this.$router.push('/login')
       }
     }
