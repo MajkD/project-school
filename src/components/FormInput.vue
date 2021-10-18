@@ -13,6 +13,7 @@
       @input="onSelect"
     >
       <option v-for="option in list"
+        v-if="shouldShow(option)"
         :selected="selected === option.text"
       >
         {{ option.text }}
@@ -50,6 +51,10 @@
         type: String,
         required: false,
         default: ''
+      },
+      belongsTo: {
+        type: String,
+        required: false
       }
     },
     data() {
@@ -67,6 +72,15 @@
     },
     methods: {
       ...mapActions(['setSelected']),
+      shouldShow(option) {
+        if(this.belongsTo) {
+          const selectedBelonging = this.$store.state[this.belongsTo].selected
+          if(option[this.belongsTo] !== selectedBelonging) {
+            return false
+          }
+        }
+        return true
+      },
       onInput(event) {
         this.$emit('onInput', event.target.value)
       },

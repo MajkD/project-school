@@ -14,15 +14,18 @@ module.exports = {
     student: {
       selected: 'Lisa Danielsson',
       list: [
-        { text: 'Mikael Danielsson'},
-        { text: 'Johanna Wadenius'},
-        { text: 'Bobo Wadenius'},
-        { text: 'Jens Wadenius'},
-        { text: 'Lisa Danielsson'},
-        { text: 'Ole Danielsson'},
-        { text: 'Miro Danielsson'},
-        { text: 'Test Testsson'},
-        { text: 'Per Persson'},
+        { text: 'Mikael Danielsson', group: 'Åk 1' },
+        { text: 'Johanna Wadenius', group: 'Åk 2'},
+        { text: 'Bobo Wadenius', group: 'Åk 2'},
+        { text: 'Jens Wadenius', group: 'Åk 2'},
+        { text: 'Lisa Danielsson', group: 'Åk 1'},
+        { text: 'Ole Danielsson', group: 'Åk 1'},
+        { text: 'Miro Danielsson', group: 'Åk 1'},
+        { text: 'Test Testsson', group: 'Åk 3'},
+        { text: 'Per Persson', group: 'Åk 3'},
+        { text: 'Bengt Bengtsson', group: 'Åk 3'},
+        { text: 'Pelle Pellesson', group: 'Åk 4'},
+        { text: 'Sven Svensson', group: 'Åk 4'},
       ]
     },
     material: {

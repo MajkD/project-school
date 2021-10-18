@@ -15,12 +15,13 @@
           :entity="'group'"
         >
         </FormInput>
-        <SelectionList
+        <FormInput
           :title="content.student"
-          :size="'18'"
+          :input-type="'select'"
           :entity="'student'"
+          :belongs-to="'group'"
         >
-        </SelectionList>
+        </FormInput>
       </div>
       <div class="selections-column selections-column--middle">
         <FormInput
@@ -53,7 +54,6 @@
 
 <script>
   import FormInput from '../components/FormInput.vue'
-  import SelectionList from '../components/SelectionList.vue'
   import Button from '../components/Button.vue'
   import content from '../content'
   import { mapActions } from 'vuex'
@@ -62,7 +62,6 @@
     name: 'Main',
     components: {
       FormInput,
-      SelectionList,
       Button,
     },
     computed: {
