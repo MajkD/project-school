@@ -67,9 +67,14 @@ module.exports = {
       state.modal.type = payLoad.modalType
     },
     mutateEntity(state, payLoad) {
-      state[payLoad.entity].list.push({
+      let data = {
         text: payLoad.value
-      })
+      }
+      const belongsTo = state[payLoad.entity].belongsTo
+      if (belongsTo) {
+        data[belongsTo] = state[belongsTo].selected
+      }
+      state[payLoad.entity].list.push(data)
     },
     mutateSelected(state, payLoad) {
       state[payLoad.entity].selected = payLoad.value
