@@ -19,7 +19,6 @@
           :title="content.student"
           :input-type="'select'"
           :entity="'student'"
-          :belongs-to="'group'"
         >
         </FormInput>
       </div>

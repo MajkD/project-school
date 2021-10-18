@@ -51,10 +51,6 @@
         type: String,
         required: false,
         default: ''
-      },
-      belongsTo: {
-        type: String,
-        required: false
       }
     },
     data() {
@@ -73,9 +69,10 @@
     methods: {
       ...mapActions(['setSelected']),
       shouldShow(option) {
-        if(this.belongsTo) {
-          const selectedBelonging = this.$store.state[this.belongsTo].selected
-          if(option[this.belongsTo] !== selectedBelonging) {
+        const belongs = this.$store.state[this.entity].belongsTo
+        if(belongs) {
+          const selectedBelonging = this.$store.state[belongs].selected
+          if(option[belongs] !== selectedBelonging) {
             return false
           }
         }

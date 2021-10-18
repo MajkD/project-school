@@ -12,6 +12,7 @@ module.exports = {
       ]
     },
     student: {
+      belongsTo: 'group',
       selected: 'Lisa Danielsson',
       list: [
         { text: 'Mikael Danielsson', group: 'Åk 1' },
