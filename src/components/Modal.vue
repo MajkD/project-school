@@ -6,7 +6,7 @@
   >
     <div class="modal__overlay" @click="close"></div>
     <div class=modal__content>
-      <h3> {{ content.title }} </h3>
+      <h3> {{ title }} </h3>
       <FormInput
         :title="content.text"
         :input-type="'input'"
@@ -50,6 +50,12 @@
     computed: {
       show() {
         return this.$store.state.modal.visible
+      },
+      title() {
+        return this.content.title.replace(
+          '{selectedGroup}',
+          this.$store.state.group.selected
+        )
       },
       content() {
         return content.modalTypes[this.$store.state.modal.type]

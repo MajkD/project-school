@@ -8,7 +8,7 @@ module.exports = {
     }
   },
   addNewStudent: {
-    title: 'Lägg till ny elev',
+    title: 'Lägg till ny elev ({selectedGroup})',
     text: 'Namn',
     action: {
       type: 'add',
