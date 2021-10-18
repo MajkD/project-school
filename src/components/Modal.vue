@@ -65,6 +65,7 @@
       ...mapActions(['add', 'setModal']),
       close() {
         this.setModal({ visible: false })
+        this.inputModalValue = null
       },
       submit() {
         if (this.content.action.type === 'add') {
