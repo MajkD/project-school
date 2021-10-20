@@ -1,9 +1,15 @@
 <template>
   <div class="login">
     <h1> {{ content.title }}</h1>
-    <FormInput :title="content.username" :input-type="'input'"></FormInput>
-    <FormInput :title="content.password" :input-type="'input'"></FormInput>
-    <Button :text="content.login" :small=true @clicked="onClick"></Button>
+    <div class="row">
+      <FormInput :title="content.username" :input-type="'input'"></FormInput>
+    </div>
+    <div class="row">
+      <FormInput :title="content.password" :input-type="'input'"></FormInput>
+    </div>
+    <div class="row">
+      <Button :text="content.login" :small=true @clicked="onClick"></Button>
+    </div>
   </div>
 </template>
 

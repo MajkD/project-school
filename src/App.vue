@@ -31,4 +31,12 @@
   body {
     background: $background-color;
   }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: end;
+    margin-bottom: 1rem;
+  }
 </style>

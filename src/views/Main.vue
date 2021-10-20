@@ -9,38 +9,10 @@
           :disabled="true"
         >
         </FormInput>
-        <FormInput
-          :title="content.group"
-          :input-type="'select'"
-          :entity="'group'"
-        >
-        </FormInput>
-        <FormInput
-          :title="content.student"
-          :input-type="'select'"
-          :entity="'student'"
-        >
-        </FormInput>
-      </div>
-      <div class="selections-column selections-column--middle">
-        <FormInput
-          :title="content.material"
-          :input-type="'select'"
-          :entity="'material'"
-        >
-        </FormInput>
-        <div class="button-group">
-          <Button :text="content.buttons.newGroup" @clicked="newGroupClicked"></Button>
-        </div>
-        <div class="button-student">
-          <Button :text="content.buttons.newStudent" @clicked="newStudentClicked"></Button>
-        </div>
       </div>
       <div class="selections-column">
-        <div class="button-material">
-          <Button :text="content.buttons.newMaterial" @clicked="newMaterialClicked"></Button>
-        </div>
         <div class="space"></div>
+        <Button :text="content.buttons.settings" @clicked="onSettings"></Button>
         <Button :text="content.buttons.viewStudent"></Button>
         <Button :text="content.buttons.viewStudentMatrixes"></Button>
         <Button :text="content.buttons.viewGroupMatrixes"></Button>
@@ -78,15 +50,8 @@
       }
     },
     methods: {
-      ...mapActions(['setModal']),
-      newGroupClicked() {
-        this.setModal({ visible: true, modalType: 'addNewGroup' })
-      },
-      newStudentClicked() {
-        this.setModal({ visible: true, modalType: 'addNewStudent' })
-      },
-      newMaterialClicked() {
-        this.setModal({ visible: true, modalType: 'addNewMaterial' })
+      onSettings() {
+        this.$router.push('/settings')
       }
     }
   }
@@ -98,7 +63,7 @@
   }
 
   .main {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .selections-column {
@@ -112,16 +77,6 @@
   
   .selections-panel {
     display: flex;
-  }
-
-  .button-group {
-    margin-top:  2.4rem;
-  }
-  .button-student {
-    margin-top:  2rem;
-  }
-  .button-material {
-    margin-top:  1.4rem;
   }
 
   .space {

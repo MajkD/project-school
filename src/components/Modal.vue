@@ -7,24 +7,28 @@
     <div class="modal__overlay" @click="close"></div>
     <div class=modal__content>
       <h3> {{ title }} </h3>
-      <FormInput
-        :title="content.text"
-        :input-type="'input'"
-        @onInput="onInput"
-      />
-      <div class="actions">
-        <Button
-          :text="'AVBRYT'"
-          :type="'secondary'"
-          @clicked="close"
-        >
-        </Button>
-        <Button
-          :text="'OK'"
-          :disabled="!inputModalValue"
-          @clicked="submit"
-        >
-        </Button>
+      <div class="row">
+        <FormInput
+          :title="content.text"
+          :input-type="'input'"
+          @onInput="onInput"
+        />
+      </div>
+      <div class="row">
+        <div class="actions">
+          <Button
+            :text="'AVBRYT'"
+            :type="'secondary'"
+            @clicked="close"
+          >
+          </Button>
+          <Button
+            :text="'OK'"
+            :disabled="!inputModalValue"
+            @clicked="submit"
+          >
+          </Button>
+        </div>
       </div>
     </div>
   </div>
