@@ -28,6 +28,10 @@
 <style lang="scss">
   @import 'common.scss';
 
+  .app {
+    height: 100%;
+  }
+
   body {
     background: $background-color;
     height:  100vh;
