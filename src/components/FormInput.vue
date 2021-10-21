@@ -15,16 +15,15 @@
       <option v-for="option in list"
         v-if="shouldShow(option)"
         :selected="selected === option.text"
+        :value="option.text"
       >
-        {{ option.text }}
+        {{ itemText(option) }}
       </option>
     </select>
   </div>
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-
   export default {
     name: 'FormInput',
     props: {
@@ -51,6 +50,11 @@
         type: String,
         required: false,
         default: ''
+      },
+      showAll: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     data() {
@@ -59,20 +63,57 @@
       }
     },
     computed: {
+      entityData() {
+        return this.$store.state.appData[this.entity] 
+      },
       list() {
-        return this.$store.state.appData[this.entity].list
+        if(this.belongsTo) {
+          const sortedList = []
+          let listInternal = []
+          const listBelonging = this.$store.state.appData[this.belongsTo].list
+          for(const i in listBelonging) {
+            const text = listBelonging[i].text
+            for(const j in this.entityData.list) {
+              const item = this.entityData.list[j]
+              if(item[this.belongsTo] === text) {
+                listInternal.push(item)
+              }
+            }
+            sortedList.push(...this.sortAlphabetically(listInternal))
+            listInternal = []
+          }
+          return sortedList
+        }
+        return this.entityData.list
       },
       selected() {
-        return this.$store.state.appData[this.entity].selected
+        return this.entityData.selected
+      },
+      belongsTo() {
+        return this.entityData.belongsTo
       }
     },
     methods: {
-      ...mapActions(['setSelected']),
+      sortAlphabetically(listToSort) {
+        return listToSort.sort((a, b) => {
+          if (a.text < b.text) { return -1 }
+          if (a.text > b.text) { return 1 }
+          return 0
+        })
+      },
+      itemText(option) {
+        if (this.belongsTo && this.showAll) {
+          return `${option.text}, ${option[this.belongsTo]}`
+        }
+        return option.text
+      },
       shouldShow(option) {
-        const belongs = this.$store.state.appData[this.entity].belongsTo
-        if(belongs) {
-          const selectedBelonging = this.$store.state.appData[belongs].selected
-          if(option[belongs] !== selectedBelonging) {
+        if(this.showAll) {
+          return true
+        }
+        if(this.belongsTo) {
+          const selectedBelonging = this.$store.state.appData[this.belongsTo].selected
+          if(option[this.belongsTo] !== selectedBelonging) {
             return false
           }
         }
@@ -82,7 +123,7 @@
         this.$emit('onInput', event.target.value)
       },
       onSelect(event) {
-        this.setSelected({
+        this.$emit('selected', {
           entity: this.entity,
           value: event.target.value
         })

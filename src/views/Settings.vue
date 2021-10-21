@@ -7,6 +7,7 @@
           :title="content.group"
           :input-type="'select'"
           :entity="'group'"
+          @selected="onSelected"
         >
         </FormInput>
         <Button :text="content.buttons.newGroup" @clicked="newGroupClicked"></Button>
@@ -54,7 +55,7 @@
       }
     },
     methods: {
-      ...mapActions(['setLoggedIn', 'setModal']),
+      ...mapActions(['setLoggedIn', 'setModal', 'setSelected']),
       newGroupClicked() {
         this.setModal({ visible: true, modalType: 'addNewGroup' })
       },
@@ -66,6 +67,9 @@
       },
       onBack() {
         this.$router.push('/')
+      },
+      onSelected(payLoad) {
+        this.setSelected(payLoad)
       }
     }
   }

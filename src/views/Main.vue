@@ -8,6 +8,14 @@
         :disabled="true"
       >
       </FormInput>
+      <FormInput
+        :title="content.student"
+        :input-type="'select'"
+        :entity="'student'"
+        :show-all="true"
+        @selected="onSelected"
+      >
+      </FormInput>
     </div>
     <div class="selections-column selections-column__buttons">
       <Button :text="content.buttons.settings" @clicked="onSettings"></Button>
@@ -47,8 +55,12 @@
       }
     },
     methods: {
+      ...mapActions(['setSelected']),
       onSettings() {
         this.$router.push('/settings')
+      },
+      onSelected(payLoad) {
+        this.setSelected(payLoad)
       }
     }
   }

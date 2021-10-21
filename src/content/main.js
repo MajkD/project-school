@@ -1,5 +1,6 @@
 module.exports = {
   teacher: 'Lärare',
+  student: 'Elev',
   exampleTeacher: 'Jens Wadenius',
   buttons: {
     settings: 'Inställningar',
