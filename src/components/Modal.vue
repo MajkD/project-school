@@ -130,7 +130,14 @@
   }
 
   .actions {
-    display: flex
+    display: flex;
+
+    .button:nth-child(1) {
+      padding-right:  0.2rem;
+    }
+    .button:nth-child(2) {
+      padding-left:  0.2rem;
+    }
   }
 }
 

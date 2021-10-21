@@ -77,5 +77,9 @@
     margin: auto;
     text-align: center;
     margin-top:  5rem;
+
+    .form-input {
+      margin-right: 0.5rem;
+    }
   }
 </style>

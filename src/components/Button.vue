@@ -49,7 +49,6 @@
 
   .button {
     height: 3rem;
-    padding: 0 0.3rem 0 0;
   }
 
   button {

@@ -75,6 +75,10 @@
       flex-direction: column;
       justify-content: end;
       align-items: end;
+
+      .button {
+        margin-bottom: 0.3rem;
+      }
     }
   }
 </style>

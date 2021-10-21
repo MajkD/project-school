@@ -102,7 +102,6 @@
     font-size: $font-size;
     margin-bottom: 0.1rem;
     text-align: left;
-    padding: 0 0.3rem 0 0;
 
     &__title {
       padding-left: 1rem;  
