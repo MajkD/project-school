@@ -30,6 +30,9 @@
 
   body {
     background: $background-color;
+    height:  100vh;
+    margin: 0;
+    display: grid;
   }
 
   .row {
