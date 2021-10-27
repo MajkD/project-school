@@ -38,6 +38,11 @@ export default {
       ]
     }
   },
+  getters: {
+    getStudentSelected: state => {
+      return state.student.selected !== ''
+    }
+  },
   actions: {
     add({ state, commit, dispatch, rootGetters }, payLoad) {
       commit('mutateEntity', payLoad)

@@ -17,7 +17,17 @@
       >
       </FormInput>
     </div>
-    <div class="selections-column selections-column__buttons">
+    <div class="selections-column">
+      <FormInput
+          :title="content.material"
+          :input-type="'select'"
+          :entity="'material'"
+        >
+      </FormInput>
+    </div>
+    <div class="selections-column selections-column__buttons"
+      v-if="showButtons"
+    >
       <Button :text="content.buttons.settings" @clicked="onSettings"></Button>
       <Button :text="content.buttons.viewStudent"></Button>
       <Button :text="content.buttons.viewStudentMatrixes"></Button>
@@ -44,14 +54,8 @@
       content() {
         return content.main
       },
-      groupData() {
-        return this.$store.state.groupData
-      },
-      studentData() {
-        return this.$store.state.studentData
-      },
-      materialData() {
-        return this.$store.state.materialData
+      showButtons() {
+        return !this.$store.getters.getStudentSelected
       }
     },
     methods: {
