@@ -13,7 +13,7 @@ export default {
     },
     student: {
       belongsTo: 'group',
-      selected: 'Lisa Danielsson',
+      selected: '',
       list: [
         { text: 'Mikael Danielsson', group: 'Åk 1' },
         { text: 'Johanna Wadenius', group: 'Åk 2'},

@@ -12,6 +12,7 @@
     <select v-if="inputType === 'select'"
       @input="onSelect"
     >
+      <option :selected="true" v-if="showAll" />
       <option v-for="option in list"
         v-if="shouldShow(option)"
         :selected="selected === option.text"
@@ -55,7 +56,7 @@
         type: Boolean,
         required: false,
         default: false
-      }
+      },
     },
     data() {
       return {
