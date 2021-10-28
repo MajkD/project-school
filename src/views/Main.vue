@@ -1,39 +1,52 @@
 <template>
   <div class="main">
-    <div class="selections-column">
-      <FormInput
-        :title="content.teacher"
-        :input-type="'input'"
-        :placeholder="content.exampleTeacher"
-        :disabled="true"
-      >
-      </FormInput>
-      <FormInput
-        :title="content.student"
-        :input-type="'select'"
-        :entity="'student'"
-        :show-all="true"
-        @selected="onSelected"
-      >
-      </FormInput>
-    </div>
-    <div class="selections-column">
-      <FormInput
-          :title="content.material"
-          :input-type="'select'"
-          :entity="'material'"
+    <div class="panel panel__top">
+      <div class="selections-column">
+        <FormInput
+          :title="content.teacher"
+          :input-type="'input'"
+          :placeholder="content.exampleTeacher"
+          :disabled="true"
         >
+        </FormInput>
+      </div>
       </FormInput>
+      <div class="selections-column">
+        <FormInput
+            :title="content.material"
+            :input-type="'select'"
+            :entity="'material'"
+          >
+        </FormInput>
+      </div>
     </div>
-    <div class="selections-column selections-column__buttons"
-      v-if="showButtons"
-    >
-      <Button :text="content.buttons.settings" @clicked="onSettings"></Button>
-      <Button :text="content.buttons.viewStudent"></Button>
-      <Button :text="content.buttons.viewStudentMatrixes"></Button>
-      <Button :text="content.buttons.viewGroupMatrixes"></Button>
-      <Button :text="content.buttons.printMaterial"></Button>
-      <Button :text="content.buttons.logout"></Button>
+    <div class="panel panel__bottom">
+      <div class="selections-column">
+        <FormInput
+          :title="content.student"
+          :input-type="'select'"
+          :entity="'student'"
+          :show-all="true"
+          @selected="onSelected"
+        >
+        </FormInput>
+        <FormInput
+          v-if="selectedStudent"
+          :title="content.instructions"
+          :input-type="'input'"
+        >
+        </FormInput>
+      </div>
+      <div class="selections-column selections-column__buttons"
+        v-if="!selectedStudent"
+      >
+        <Button :text="content.buttons.settings" @clicked="onSettings"></Button>
+        <Button :text="content.buttons.viewStudent"></Button>
+        <Button :text="content.buttons.viewStudentMatrixes"></Button>
+        <Button :text="content.buttons.viewGroupMatrixes"></Button>
+        <Button :text="content.buttons.printMaterial"></Button>
+        <Button :text="content.buttons.logout"></Button>
+      </div>
     </div>
   </div>
 </template>
@@ -54,8 +67,8 @@
       content() {
         return content.main
       },
-      showButtons() {
-        return !this.$store.getters.getStudentSelected
+      selectedStudent() {
+        return this.$store.getters.getStudentSelected
       }
     },
     methods: {
@@ -76,15 +89,34 @@
   }
 
   .main {
+    height: 100%;
+  }
+
+  .panel {
     display: flex;
     justify-content: space-between;
-    height: 100%;
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+
+    &__top {
+      justify-content: flex-start;
+      height: 75px;
+    }
+
+    &__bottom {
+      bottom: 0;
+      top: 75px;
+
+      .form-input {
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   .selections-column {
     width:  20rem;
     margin-right: 2rem;
-    padding: 1rem;
 
     &__buttons {
       display: flex;

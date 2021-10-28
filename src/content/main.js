@@ -2,6 +2,7 @@ module.exports = {
   teacher: 'Lärare',
   student: 'Elev',
   material: 'Material',
+  instructions: 'Instruktioner',
   exampleTeacher: 'Jens Wadenius',
   buttons: {
     settings: 'Inställningar',

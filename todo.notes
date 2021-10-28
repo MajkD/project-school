@@ -1,11 +1,15 @@
 
+- Split up student view / teacher view
+
+
+- Hover issue with buttons (message box)
+- MAterial shoudl be in the front
+
 - Make modal types controlled by configs with slots instead
   - Modal with sub-modal for example?
 - Modals that are used for adding stuff should be the onyl ones replacing {blah} etc..
 
 --------
-- Split up student view / teacher view
-
 - Add Linter
 
 
